@@ -37,10 +37,11 @@ class MainClass
 
         FanLaptop fan = new FanLaptop();
         State stateAwal = State.quiet;
+        Boolean isExit = false;
 
         String[] modeFan = { "Quiet", "Balanced", "Performance", "Turbo" };
 
-        while (true)
+        while (!isExit)
         {
             Console.WriteLine(modeFan[(int)stateAwal] + " MODE");
             Console.WriteLine("Change fan mode: ");
@@ -58,6 +59,11 @@ class MainClass
                         stateAwal = State.turbo;
                         Console.WriteLine("Fan Quiet berubah menjadi turbo");
                     }
+                    else if (fanMode == "Exit")
+                    {
+                        Console.WriteLine("Mematikan komputer");
+                        isExit = true;
+                    }
                     else
                     {
                         Console.WriteLine("Inputan tidak valid");
@@ -73,6 +79,11 @@ class MainClass
                     {
                         stateAwal = State.performance;
                         Console.WriteLine("Fan Balanced berubah menjadi performance");
+                    }
+                    else if (fanMode == "Exit")
+                    {
+                        Console.WriteLine("Mematikan komputer");
+                        isExit = true;
                     }
                     else
                     {
@@ -90,6 +101,11 @@ class MainClass
                         stateAwal = State.turbo;
                         Console.WriteLine("Fan Performance berubah menjadi turbo");
                     }
+                    else if (fanMode == "Exit")
+                    {
+                        Console.WriteLine("Mematikan komputer");
+                        isExit = true;
+                    }
                     else
                     {
                         Console.WriteLine("Inputan tidak valid");
@@ -105,6 +121,11 @@ class MainClass
                     {
                         stateAwal = State.quiet;
                         Console.WriteLine("Fan Turbo berubah menjadi quiet");
+                    }
+                    else if (fanMode == "Exit")
+                    {
+                        Console.WriteLine("Mematikan komputer");
+                        isExit = true;
                     }
                     else
                     {
