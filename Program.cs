@@ -39,7 +39,7 @@ class MainClass
         State stateAwal = State.quiet;
         Boolean isExit = false;
 
-        String[] modeFan = { "Quiet", "Balanced", "Performance", "Turbo" };
+        String[] modeFan = { "QUIET", "BALANCED", "PERFORMANCE", "TURBO" };
 
         while (!isExit)
         {
@@ -49,17 +49,17 @@ class MainClass
             String fanMode = Console.ReadLine().ToUpper();
             switch (stateAwal) { 
                 case State.quiet:
-                    if (fanMode == "BALANCED")
+                    if (fanMode == "MODE UP")
                     {
                         stateAwal = State.balanced;
                         Console.WriteLine("Fan Quiet berubah menjadi balanced");
                     }
-                    else if (fanMode == "TURBO")
+                    else if (fanMode == "TURBO SHORTCUT")
                     {
                         stateAwal = State.turbo;
                         Console.WriteLine("Fan Quiet berubah menjadi turbo");
                     }
-                    else if (fanMode == "Exit")
+                    else if (fanMode == "EXIT")
                     {
                         Console.WriteLine("Mematikan komputer");
                         isExit = true;
@@ -70,17 +70,17 @@ class MainClass
                     }
                     break;
                 case State.balanced:
-                    if (fanMode == "QUIET")
+                    if (fanMode == "MODE DOWN")
                     {
                         stateAwal = State.quiet;
                         Console.WriteLine("Fan Balanced berubah menjadi quiet");
                     }
-                    else if (fanMode == "PERFORMANCE")
+                    else if (fanMode == "MODE UP")
                     {
                         stateAwal = State.performance;
                         Console.WriteLine("Fan Balanced berubah menjadi performance");
                     }
-                    else if (fanMode == "Exit")
+                    else if (fanMode == "EXIT")
                     {
                         Console.WriteLine("Mematikan komputer");
                         isExit = true;
@@ -91,17 +91,17 @@ class MainClass
                     }
                     break;
                 case State.performance:
-                    if (fanMode == "BALANCED")
+                    if (fanMode == "MODE DOWN")
                     {
                         stateAwal = State.balanced;
                         Console.WriteLine("Fan Performance berubah menjadi balanced");
                     }
-                    else if (fanMode == "TURBO")
+                    else if (fanMode == "MODE UP")
                     {
                         stateAwal = State.turbo;
                         Console.WriteLine("Fan Performance berubah menjadi turbo");
                     }
-                    else if (fanMode == "Exit")
+                    else if (fanMode == "EXIT")
                     {
                         Console.WriteLine("Mematikan komputer");
                         isExit = true;
@@ -112,17 +112,17 @@ class MainClass
                     }
                     break;
                 case State.turbo:
-                    if (fanMode == "PERFORMANCE")
+                    if (fanMode == "MODE DOWN")
                     {
                         stateAwal = State.performance;
                         Console.WriteLine("Fan Turbo berubah menjadi performance");
                     }
-                    else if (fanMode == "QUIET")
+                    else if (fanMode == "TURBO SHORTCUT")
                     {
                         stateAwal = State.quiet;
                         Console.WriteLine("Fan Turbo berubah menjadi quiet");
                     }
-                    else if (fanMode == "Exit")
+                    else if (fanMode == "EXIT")
                     {
                         Console.WriteLine("Mematikan komputer");
                         isExit = true;
